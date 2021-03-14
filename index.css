@@ -3,48 +3,68 @@ body {
   height: 100vh;
   margin: 0;
   color: var(--my-font-color);
+  font-family: "Helvetica Neue", "Hevletica", "Arial", sans-serif;
   background: var(--my-background-gradient);
 }
 
-#maingrid {
+#outergrid {
+  display: grid;
+  grid-template-columns: 1fr 20% 75% 1fr;
   width: 100%;
   height: 100%;
+}
+
+#imagegrid {
   display: grid;
-  transition: transform 1s ease-in-out;
-  grid-template-columns: 1fr 2fr 6fr 1fr;
+  grid-column: 2;
+}
+
+#maingrid {
+  grid-column: 3;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 #title {
   display: flex;
   align-items: center;
-  height: auto;
   justify-content: center;
   transform: translateY(-100%);
   transition: transform 1s ease-in-out;
   grid-row: 1 / span 3;
-  grid-column: 3;
+  grid-column: 1;
 }
 
-#graphic {
-  grid-column: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#title.state1 {
+  grid-row: 1 / span 1;
 }
 
-#graphic img {
-  width: 100%;
-}
-
-h1 {
-  font-family: "Helvetica Neue";
+.titleState0,
+.titleState1 {
   font-weight: 200;
   font-size: 8vw;
+  trasition: transform 100s ease-in-out;
 }
 
-h1:hover {
+.titleState0:hover {
   animation: rocker 1.4s infinite;
   animation-timing-function: linear;
+  trasition: transform 100s ease-in-out;
+}
+
+#info {
+  font-size: 1.2em;
+  z-index: -100;
+  transition: transform 800ms ease-in-out;
+  display: none;
+
+}
+
+#info.state1 {
+  padding: 4%;
+  display: block;
+  grid-column: 1;
+  grid-row: 2 / span 2;
 }
 
 .fades {

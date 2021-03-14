@@ -11,81 +11,56 @@
 </head>
 
 <body>
-  <div id="maingrid">
+  <div id="outergrid">
+    <div id="imagegrid">
+      <div id="graphic">
 
-    <div id="graphic">
+      </div>
+      <div class="logo" id="gh"><a target="_blank" rel="norefferer noopener" href="http://github.com/elunico">
+          <img alt="GitHub logo that links to my github" class="fades medialink" width="75" height="75" src="assets/github.png">
+        </a></div>
 
+      <div class="logo" id="lin"><a target="_blank" rel="norefferer noopener" href="http://www.linkedin.com/in/thomas-povinelli">
+          <img alt="LinkedIn logo that links to my LinkedIn" class="fades medialink" width="75" height="75" src="assets/linkedin.png">
+        </a></div>
+
+      <div class="logo" id="old"><a target="_blank" rel="norefferer noopener" href="http://eluni.co">
+          <img alt="Link to my old website" class="fades medialink" width="75" height="75" src="assets/old.png">
+        </a></div>
     </div>
-    <div hidden id="title" class="title">
 
-      <h1>Thomas Povinelli</h1>
+    <div id="maingrid">
+      <div id="title" class="title">
 
+        <h1 id="titleHeader" class="titleState0" onClick="showInfo()">Thomas Povinelli</h1>
+      </div>
+
+      <div id="info">
+        <p>I am a programmer, teacher, and font enthusiast in New York City. </p>
+        <p>
+          My favorite language is Kotlin, my most used language is Python, but the best language is JavaScript.
+        </p>
+        <p>
+          I graduated Stony Brook University in 2019 with a B.S. in Computer Science.
+          You can find a lot of my programming projects around the internet. Here on my site and a few other places.
+        </p>
+        <p>
+          Generally, my favorite fonts are the grotesque and neo-grotesque sans-serifs. Born of clean, neutral Swiss
+          and industrial German design, respectively, fonts like Helvetica, Akzidenz-Grotesk, and Univers are some
+          of my favorite. Other big highlights include Menlo, Monaco, Hoefler Text, Minion Pro, Frutiger, Avenir,
+          Source Code Pro, and the IBM Plex family. There's many other great ones, but I do have a softspot for these.
+        </p>
+
+      </div>
     </div>
 
-    <div class="logo" id="gh"><a target="_blank" rel="norefferer noopener" href="http://github.com/elunico">
-        <img alt="GitHub logo that links to my github" class="fades medialink" width="75" height="75" src="assets/github.png">
-      </a></div>
-
-    <div class="logo" id="lin"><a target="_blank" rel="norefferer noopener" href="http://www.linkedin.com/in/thomas-povinelli">
-        <img alt="LinkedIn logo that links to my LinkedIn" class="fades medialink" width="75" height="75" src="assets/linkedin.png">
-      </a></div>
-
-    <div class="logo" id="old"><a target="_blank" rel="norefferer noopener" href="http://eluni.co">
-        <img alt="Link to my old website" class="fades medialink" width="75" height="75" src="assets/old.png">
-      </a></div>
   </div>
+
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+<script src="intro-animation.js"></script>
 
-<script type="text/javascript">
-  const shape = new mojs.Shape({
-    parent: '#graphic',
-    shape: 'rect',
-    fill: 'none',
-    stroke: '#3190df',
-    radius: 0,
-    strokeWidth: 20,
-    angle: {
-      [-180]: 0
-    },
-
-    duration: 100,
-    easing: 'sin.in',
-
-  }).then({
-    radius: 120,
-    easing: 'sin.in',
-    duration: 600,
-    angle: {
-      [0]: 90
-    },
-    onComplete() {
-      document.getElementById('title').style.setProperty('transform', 'translate(0,0)');
-    }
-  }).then({
-    strokeWidth: 0,
-    radius: 100,
-    scale: {
-      to: 2,
-      easing: 'sin.in'
-    },
-    angle: {
-      [90]: 180
-    },
-    duration: 600,
-    onComplete() {
-      let fades = document.getElementsByClassName('fades')
-
-      for (let fade of fades) {
-        fade.style.setProperty('opacity', '1');
-      }
-      graphic.parentNode.removeChild(graphic);
-    }
-  })
-
-
-  shape.play();
-</script>
-
+<script src="index.js"></script>
 
 </html>
