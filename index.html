@@ -16,23 +16,31 @@
       <div id="graphic">
 
       </div>
-      <div class="logo" id="gh"><a target="_blank" rel="norefferer noopener" href="http://github.com/elunico">
-          <img alt="GitHub logo that links to my github" class="fades medialink" width="75" height="75" src="assets/github.png">
-        </a></div>
+      <div class="logo" id="gh">
+        <a target="_blank" rel="norefferer noopener" href="http://github.com/elunico">
+          <img data-kind="github" id="ghimage" alt="GitHub logo that links to my github" class="fades medialink" width="75" height="75" src="assets/github.png">
+        </a>
+      </div>
 
-      <div class="logo" id="lin"><a target="_blank" rel="norefferer noopener" href="http://www.linkedin.com/in/thomas-povinelli">
-          <img alt="LinkedIn logo that links to my LinkedIn" class="fades medialink" width="75" height="75" src="assets/linkedin.png">
-        </a></div>
+      <div class="logo" id="lin">
+        <a target="_blank" rel="norefferer noopener" href="http://www.linkedin.com/in/thomas-povinelli">
+          <img data-kind="linkedin" id="liimage" alt="LinkedIn logo that links to my LinkedIn" class="fades medialink" width="75" height="75" src="assets/linkedin.png">
+        </a>
+      </div>
 
-      <div class="logo" id="old"><a target="_blank" rel="norefferer noopener" href="http://eluni.co">
-          <img alt="Link to my old website" class="fades medialink" width="75" height="75" src="assets/old.png">
-        </a></div>
+      <div class="logo" id="old">
+        <a target="_blank" rel="norefferer noopener" href="http://eluni.co">
+          <img data-kind="oldsite" id="osimage" alt="Link to my old website" class="fades medialink" width="75" height="75" src="assets/old.png">
+        </a>
+      </div>
     </div>
 
     <div id="maingrid">
       <div id="title" class="title">
-
-        <h1 id="titleHeader" class="titleState0" onClick="showInfo()">Thomas Povinelli</h1>
+        <h1 id="titleHeader" class="titleState0" data-kind="title" onClick="showInfo()">Thomas Povinelli</h1>
+      </div>
+      <div id="title-high" class="title">
+        <h1 class="titleState1">Thomas Povinelli</h1>
       </div>
 
       <div id="info">
@@ -56,6 +64,11 @@
 
   </div>
 
+  <div id="tooltip"></div>
+
+  <div id="gh-tooltip"></div>
+  <div id="li-tooltip"></div>
+  <div id="os-tooltip"></div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>

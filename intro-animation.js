@@ -6,42 +6,42 @@ const shape = new mojs.Shape({
 	radius: 0,
 	strokeWidth: 20,
 	angle: {
-	  [-180]: 0
+		[-180]: 0
 	},
 
 	duration: 100,
 	easing: 'sin.in',
 
-  }).then({
+}).then({
 	radius: 120,
 	easing: 'sin.in',
 	duration: 600,
 	angle: {
-	  [0]: 90
+		[0]: 90
 	},
 	onComplete() {
-	  document.getElementById('title').style.setProperty('transform', 'translate(0,0)');
+		document.getElementById('title').style.setProperty('transform', 'translate(0,0)');
 	}
-  }).then({
+}).then({
 	strokeWidth: 0,
 	radius: 100,
 	scale: {
-	  to: 2,
-	  easing: 'sin.in'
+		to: 2,
+		easing: 'sin.in'
 	},
 	angle: {
-	  [90]: 180
+		[90]: 180
 	},
 	duration: 600,
 	onComplete() {
-	  let fades = document.getElementsByClassName('fades')
+		let fades = document.getElementsByClassName('fades')
 
-	  for (let fade of fades) {
-		fade.style.setProperty('opacity', '1');
-	  }
-	  graphic.parentNode.removeChild(graphic);
+		for (let fade of fades) {
+			fade.style.setProperty('opacity', '1');
+		}
+		graphic.parentNode.removeChild(graphic);
 	}
-  })
+})
 
 
-  shape.play();
+shape.play();
