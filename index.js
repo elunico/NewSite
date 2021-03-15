@@ -37,10 +37,20 @@ ghimage.onmouseout = tooltipOut.bind(ghimage);
 liimage.onmouseout = tooltipOut.bind(liimage);
 osimage.onmouseout = tooltipOut.bind(osimage);
 
-titleHeader.onmousemove = showTooltip.bind(titleHeader)
-ghimage.onmousemove = showTooltip.bind(ghimage)
-liimage.onmousemove = showTooltip.bind(liimage)
-osimage.onmousemove = showTooltip.bind(osimage)
+titleHeader.onmousemove = showTooltip.bind(titleHeader);
+ghimage.onmousemove = showTooltip.bind(ghimage);
+liimage.onmousemove = showTooltip.bind(liimage);
+osimage.onmousemove = showTooltip.bind(osimage);
+
+titleHeader.ontouchend = tooltipOut.bind(titleHeader);
+ghimage.ontouchend = tooltipOut.bind(ghimage);
+liimage.ontouchend = tooltipOut.bind(liimage);
+osimage.ontouchend = tooltipOut.bind(osimage);
+
+titleHeader.ontouchcancel = tooltipOut.bind(titleHeader);
+ghimage.ontouchcancel = tooltipOut.bind(ghimage);
+liimage.ontouchcancel = tooltipOut.bind(liimage);
+osimage.ontouchcancel = tooltipOut.bind(osimage);
 
 function tooltipOut() {
 	let kind = this.getAttribute('data-kind');
