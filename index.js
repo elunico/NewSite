@@ -57,7 +57,7 @@ function tooltipIn() {
 }
 
 function showTooltip(event) {
-	let tooltip = tooltips[this.getAttribute('data-kind')];\
+	let tooltip = tooltips[this.getAttribute('data-kind')];
 	tooltip.textContent = tipText[this.getAttribute('data-kind')];
 	tooltip.classList.add('tooltip');
 	let x = event.pageX;
