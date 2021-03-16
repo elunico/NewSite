@@ -66,6 +66,14 @@ body {
   trasition: transform 100s ease-in-out;
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+  .titleState0:hover {
+    trasition: transform 100s ease-in-out;
+  }
+
+}
+
 #info {
   font-size: 1.2em;
   z-index: -100;
@@ -95,18 +103,19 @@ body {
   justify-content: center;
 }
 
-.logo:hover {
-  animation: rocker 1.4s infinite;
-  animation-timing-function: linear;
+.logo .imgcontainer {
+  transition: opacity 800ms linear, transform 100ms ease-in-out;
 }
 
-.logo img {
-  transition: opacity 800ms linear, transform 150ms ease-in-out;
+.logo .imgcontainer:hover {
+  transition: opacity 800ms linear, transform 100ms ease-in-out;
+  transform: scale(1.2);
 }
 
 .logo img:hover {
   transition: opacity 800ms linear, transform 100ms ease-in-out;
-  transform: scale(1.2);
+  animation: rocker 1.4s infinite;
+  animation-timing-function: linear;
 }
 
 #gh {
@@ -127,7 +136,7 @@ body {
   top: 0;
   left: 0;
   font-size: 0.95rem;
-  background-color: #feffcd;
+  background-color: #ffffca;
   padding: 0.2rem;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, sans-serif;
 }

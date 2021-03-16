@@ -18,6 +18,17 @@ tooltips['github'] = document.querySelector('#gh-tooltip');
 tooltips['linkedin'] = document.querySelector('#li-tooltip');
 tooltips['oldsite'] = document.querySelector('#os-tooltip');
 
+function tooltipTouched(event) {
+	this.style.setProperty('display', 'none');
+	event.preventDefault();
+	event.stopPropagation();
+}
+
+tooltips['title'].ontouchstart = tooltipTouched.bind(tooltips['title']);
+tooltips['github'].ontouchstart = tooltipTouched.bind(tooltips['github']);
+tooltips['linkedin'].ontouchstart = tooltipTouched.bind(tooltips['linkedin']);
+tooltips['oldsite'].ontouchstart = tooltipTouched.bind(tooltips['oldsite']);
+
 let tipText = {
 	title: 'Click me! 💥',
 	github: 'Visit my GitHub 🐙',
