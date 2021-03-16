@@ -18,6 +18,15 @@ tooltips['github'] = document.querySelector('#gh-tooltip');
 tooltips['linkedin'] = document.querySelector('#li-tooltip');
 tooltips['oldsite'] = document.querySelector('#os-tooltip');
 
+let tipText = {
+	title: 'Click me! 💥',
+	github: 'Visit my GitHub 🐙',
+	linkedin: 'Find me on LinkedIn 🔗',
+	oldsite: 'Check old my old site 🖥',
+}
+
+let tooltipInterval;
+
 function tooltipTouched(event) {
 	this.style.setProperty('display', 'none');
 	event.preventDefault();
@@ -28,40 +37,6 @@ tooltips['title'].ontouchstart = tooltipTouched.bind(tooltips['title']);
 tooltips['github'].ontouchstart = tooltipTouched.bind(tooltips['github']);
 tooltips['linkedin'].ontouchstart = tooltipTouched.bind(tooltips['linkedin']);
 tooltips['oldsite'].ontouchstart = tooltipTouched.bind(tooltips['oldsite']);
-
-let tipText = {
-	title: 'Click me! 💥',
-	github: 'Visit my GitHub 🐙',
-	linkedin: 'Find me on LinkedIn 🔗',
-	oldsite: 'Check old my old site 🖥',
-}
-
-let tooltipInterval;
-
-titleHeader.onmouseenter = tooltipIn.bind(titleHeader)
-ghimage.onmouseenter = tooltipIn.bind(ghimage)
-liimage.onmouseenter = tooltipIn.bind(liimage)
-osimage.onmouseenter = tooltipIn.bind(osimage)
-
-titleHeader.onmouseout = tooltipOut.bind(titleHeader);
-ghimage.onmouseout = tooltipOut.bind(ghimage);
-liimage.onmouseout = tooltipOut.bind(liimage);
-osimage.onmouseout = tooltipOut.bind(osimage);
-
-titleHeader.onmousemove = showTooltip.bind(titleHeader);
-ghimage.onmousemove = showTooltip.bind(ghimage);
-liimage.onmousemove = showTooltip.bind(liimage);
-osimage.onmousemove = showTooltip.bind(osimage);
-
-titleHeader.ontouchend = tooltipOut.bind(titleHeader);
-ghimage.ontouchend = tooltipOut.bind(ghimage);
-liimage.ontouchend = tooltipOut.bind(liimage);
-osimage.ontouchend = tooltipOut.bind(osimage);
-
-titleHeader.ontouchcancel = tooltipOut.bind(titleHeader);
-ghimage.ontouchcancel = tooltipOut.bind(ghimage);
-liimage.ontouchcancel = tooltipOut.bind(liimage);
-osimage.ontouchcancel = tooltipOut.bind(osimage);
 
 function tooltipOut() {
 	let kind = this.getAttribute('data-kind');
@@ -84,3 +59,16 @@ function showTooltip(event) {
 	tooltip.style.setProperty('left', `${x + 15}px`);
 	tooltip.style.setProperty('top', `${y + 10}px`);
 }
+
+function bindHandlers(elt) {
+	elt.onmouseenter = tooltipIn.bind(elt);
+	elt.onmouseout = tooltipOut.bind(elt);
+	elt.onmousemove = showTooltip.bind(elt);
+	elt.ontouchend = tooltipOut.bind(elt);
+	elt.ontouchcancel = tooltipOut.bind(elt);
+}
+
+bindHandlers(titleHeader);
+bindHandlers(ghimage);
+bindHandlers(liimage);
+bindHandlers(osimage);
