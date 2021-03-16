@@ -44,7 +44,7 @@ body {
 }
 
 #title-high.state1 {
-  transition: opacity 1s linear;
+  transition: opacity 1s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,7 +127,7 @@ body {
   top: 0;
   left: 0;
   font-size: 0.95rem;
-  background-color: #ffffca;
+  background-color: #feffcd;
   padding: 0.2rem;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, sans-serif;
 }

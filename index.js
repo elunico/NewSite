@@ -19,7 +19,7 @@ tooltips['linkedin'] = document.querySelector('#li-tooltip');
 tooltips['oldsite'] = document.querySelector('#os-tooltip');
 
 let tipText = {
-	title: 'Click me! ✨',
+	title: 'Click me! 💥',
 	github: 'Visit my GitHub 🐙',
 	linkedin: 'Find me on LinkedIn 🔗',
 	oldsite: 'Check old my old site 🖥',
@@ -61,9 +61,7 @@ function tooltipOut() {
 
 function tooltipIn() {
 	let kind = this.getAttribute('data-kind');
-	tooltipInterval = setTimeout(() => {
-		tooltips[kind].style.setProperty('display', 'block');
-	}, 750);
+	tooltips[kind].style.setProperty('display', 'block');
 }
 
 function showTooltip(event) {
